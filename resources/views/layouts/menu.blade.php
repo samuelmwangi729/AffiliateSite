@@ -14,20 +14,20 @@
 </li>
 
 <li class="{{ Request::is('refsCategories*') ? 'active' : '' }}">
-    <a href="{!! route('refsCategories.index') !!}"><i class="fa fa-edit"></i><span>Referal Sites</span></a>
+    <a href="{!! route('refsCategories.index') !!}"><i class="fa fa-globe"></i><span>Referal Sites</span></a>
 </li>
 <li>
-    <a href="#"><i class="fa fa-cog">Withdraw Cash</i></a>
+    <a href="#"><i class="fa fa-credit-card">Withdraw Cash</i></a>
 </li>
 <li>
-    <a href="#"><i class="fa fa-cog">Add New Member</i></a>
+    <a href="#"><i class="fa fa-user-plus">Add New Member</i></a>
 </li>
 <li>
-    <a href="#"><i class="fa fa-cog">Upgrade Membership</i></a>
+    <a href="#"><i class="fa fa-plus-circle">Upgrade Membership</i></a>
 </li>
 <li>
-    <a href="#"><i class="fa fa-cog">Payment Method</i></a>
+    <a href="#"><i class="fa fa-coins">Payment Method</i></a>
 </li>
 <li>
-    <a href="#"><i class="fa fa-cog">Account Status</i></a>
+    <a href="#"><i class="fa fa-user">Account Status</i></a>
 </li>
