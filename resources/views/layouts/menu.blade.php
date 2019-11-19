@@ -17,17 +17,17 @@
     <a href="{!! route('refsCategories.index') !!}"><i class="fa fa-globe"></i><span>Referal Sites</span></a>
 </li>
 <li>
-    <a href="#"><i class="fa fa-credit-card">Withdraw Cash</i></a>
+    <a href="/Withdraw"><i class="fa fa-credit-card">Withdraw Cash</i></a>
 </li>
 <li>
-    <a href="#"><i class="fa fa-user-plus">Add New Member</i></a>
+    <a href="/newUser"><i class="fa fa-user-plus">Add New Member</i></a>
 </li>
 <li>
-    <a href="#"><i class="fa fa-plus-circle">Upgrade Membership</i></a>
+    <a href="/Upgrade"><i class="fa fa-plus-circle">Upgrade Membership</i></a>
 </li>
 <li>
     <a href="#"><i class="fa fa-coins">Payment Method</i></a>
 </li>
 <li>
-    <a href="#"><i class="fa fa-user">Account Status</i></a>
+    <a href="/AccountStatus/{{Auth::user()->name}}"><i class="fa fa-user">Account Status</i></a>
 </li>

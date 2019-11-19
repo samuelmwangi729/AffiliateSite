@@ -30,3 +30,8 @@ Route::resource('refsCategories', 'RefsCategoryController');
 Route::resource('refsCats', 'RefsCatController');
 
 Route::get('/refs/{site?}/{user_id?}/{ref_category_id?}','RefsCategoryController@refs')->name('refs.user');
+Route::get('/Withdraw','WithdrawController@index');
+Route::get('/newUser','NewUserController@index');
+Route::get('/Upgrade','UpgradeController@index');
+Route::get('/AccountStatus/{id}','UserController@getAccountStatus');
+Route::get('/gen','randomGenController@index');

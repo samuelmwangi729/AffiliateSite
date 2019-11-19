@@ -1,5 +1,4 @@
 <div class="table-responsive">
-    @auth
     <table class="table" id="refsLevels-table">
         <thead>
             <tr>

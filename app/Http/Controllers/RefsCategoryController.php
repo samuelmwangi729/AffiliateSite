@@ -77,7 +77,7 @@ public function refs($site=null,$userName=null,$referalCode=null){
     if(Cookie::get('ref_user_id')){
         return redirect('/register');
     }else{
-        return response('/register')
+        return redirect('/register')
         ->cookie('site',$site,60*24*30*12)
         ->cookie('ref_user_id',$userName,60*24*30*12)
         ->cookie('ref_category_id',$referalCode,60*24*30*12);

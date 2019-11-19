@@ -22,6 +22,7 @@ class UserRepository extends BaseRepository
         'email_verified_at',
         'password',
         'refered_by',
+        'referal_link',
         'no_of_refs',
         'ref_level_id',
         'role_id',
