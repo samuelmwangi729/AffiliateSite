@@ -19,10 +19,12 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('home-component', require('./components/HomeComponent.vue'));
-Vue.component('withdraw-component', require('./components/WithdrawComponent.vue'));
-Vue.component('add-component', require('./components/NewUserComponent.vue'));
-Vue.component('upgrade-component', require('./components/UpgradeComponent.vue'));
+Vue.component('home-component', require('./components/HomeComponent.vue').default);
+Vue.component('withdraw-component', require('./components/WithdrawComponent.vue').default);
+Vue.component('add-component', require('./components/NewUserComponent.vue').default);
+Vue.component('upgrade-component', require('./components/UpgradeComponent.vue').default);
+Vue.component('account-component', require('./components/AccountComponent.vue').default);
+// Vue.component('account-component',require('../components/AccountStatusComponent.vue'));
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
