@@ -12,7 +12,7 @@ class CreateUsersTable extends Migration
      *
      * @return void
      */
-    public function up(Request $request)
+    public function up()
     {
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('refered_by')->nullable();
-            $table->string('referal_link')->nullable()->default($request->session()->get('_token'));
+            $table->string('referal_link')->nullable()->default();
             $table->string('no_of_refs')->nullable()->default('0');
             $table->string('ref_level_id')->nullable();
             $table->string('role_id')->nullable();

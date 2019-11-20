@@ -1,33 +1,22 @@
 <template>
-    <div class="container">
+    <div class="container ml-5" style="padding-top:30px">
         <div class="row">
-            <form id="withdraw">
-                <fieldset>
-                    <legend>
-                        Withdraw Cash
-                    </legend>
-                    <div class="col-md-4">
-                        <label for="Amount" class="control-label">
-                            Enter the Amount You Wish to Withdraw
+            <div class="col-lg-6 offset-md-2">
+                <div class="panel panel-primary">
+                    <div class="panel-heading text-center">
+                        Withdraw Amount
+                    </div>
+                    <div class="panel-body">
+                        <form @submit="post" id="post">
+                        <label for="Amount" class="label-control">
+                            Amount
                         </label>
-                        <input type="hidden" name="_token" :value="csrf">
-                        <input type="number" class="form-control input-sm" placeholder="Eg.500" required/>
+                        <input type="number" placeholder="Enter the amount" name="amount" class="form-control">
+                        <input type="submit" value="submit" class="btn btn-primary">
+                        </form>
                     </div>
-                    <div class="col-md-4">
-                        <label for="Amount" class="control-label">
-                            Prefered Withdrawal Method
-                        </label>
-                        <select class="form-control">
-                            <option>Bank</option>
-                            <option>M-Pesa</option>
-                            <option>Others</option>
-                        </select>
-                    </div>
-                    <div class="col-md-3" style="padding-top:25px">
-                       <button type="submit" class="btn btn-primary" id="submit" onsubmit='reload()'>Send</button>
-                    </div>
-                </fieldset>
-            </form>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -40,6 +29,13 @@
         },
         mounted() {
             console.log('Component mounted.')
+        },
+        methods:{
+            post(){
+                $('#post').on('submit',function(e){
+                    alert('hello');
+                });
+            }
         }
     }
 </script>

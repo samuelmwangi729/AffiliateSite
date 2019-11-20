@@ -2116,17 +2116,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2135,6 +2124,13 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     console.log('Component mounted.');
+  },
+  methods: {
+    post: function post() {
+      $('#post').on('submit', function (e) {
+        alert('hello');
+      });
+    }
   }
 });
 
@@ -37973,85 +37969,51 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("form", { attrs: { id: "withdraw" } }, [
-        _c("fieldset", [
-          _c("legend", [
-            _vm._v("\n                    Withdraw Cash\n                ")
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-4" }, [
-            _c(
-              "label",
-              { staticClass: "control-label", attrs: { for: "Amount" } },
-              [
-                _vm._v(
-                  "\n                        Enter the Amount You Wish to Withdraw\n                    "
-                )
-              ]
-            ),
+  return _c(
+    "div",
+    { staticClass: "container ml-5", staticStyle: { "padding-top": "30px" } },
+    [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-lg-6 offset-md-2" }, [
+          _c("div", { staticClass: "panel panel-primary" }, [
+            _c("div", { staticClass: "panel-heading text-center" }, [
+              _vm._v("\n                    Withdraw Amount\n                ")
+            ]),
             _vm._v(" "),
-            _c("input", {
-              attrs: { type: "hidden", name: "_token" },
-              domProps: { value: _vm.csrf }
-            }),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control input-sm",
-              attrs: { type: "number", placeholder: "Eg.500", required: "" }
-            })
-          ]),
-          _vm._v(" "),
-          _vm._m(0),
-          _vm._v(" "),
-          _vm._m(1)
+            _c("div", { staticClass: "panel-body" }, [
+              _c("form", { attrs: { id: "post" }, on: { submit: _vm.post } }, [
+                _c(
+                  "label",
+                  { staticClass: "label-control", attrs: { for: "Amount" } },
+                  [
+                    _vm._v(
+                      "\n                        Amount\n                    "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "number",
+                    placeholder: "Enter the amount",
+                    name: "amount"
+                  }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass: "btn btn-primary",
+                  attrs: { type: "submit", value: "submit" }
+                })
+              ])
+            ])
+          ])
         ])
       ])
-    ])
-  ])
+    ]
+  )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-4" }, [
-      _c("label", { staticClass: "control-label", attrs: { for: "Amount" } }, [
-        _vm._v(
-          "\n                        Prefered Withdrawal Method\n                    "
-        )
-      ]),
-      _vm._v(" "),
-      _c("select", { staticClass: "form-control" }, [
-        _c("option", [_vm._v("Bank")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("M-Pesa")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("Others")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "col-md-3", staticStyle: { "padding-top": "25px" } },
-      [
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-primary",
-            attrs: { type: "submit", id: "submit", onsubmit: "reload()" }
-          },
-          [_vm._v("Send")]
-        )
-      ]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
