@@ -1,13 +1,14 @@
 <template>
     <div class="container ml-5" style="padding-top:30px">
-        <div class="row">
+        <div class="row justify-contect-center">
             <div class="col-lg-6 offset-md-2">
                 <div class="panel panel-primary">
                     <div class="panel-heading text-center">
                         Withdraw Amount
                     </div>
                     <div class="panel-body">
-                        <form @submit="post" id="post">
+                        <form method="POST" action="/WithdrawAmount" >
+                        <input type="hidden" :value='csrf'>
                         <label for="Amount" class="label-control">
                             Amount
                         </label>
@@ -18,7 +19,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>  
 </template>
 <script>
     export default {

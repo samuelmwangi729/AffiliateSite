@@ -2116,6 +2116,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -37973,7 +37974,7 @@ var render = function() {
     "div",
     { staticClass: "container ml-5", staticStyle: { "padding-top": "30px" } },
     [
-      _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "row justify-contect-center" }, [
         _c("div", { staticClass: "col-lg-6 offset-md-2" }, [
           _c("div", { staticClass: "panel panel-primary" }, [
             _c("div", { staticClass: "panel-heading text-center" }, [
@@ -37981,31 +37982,40 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "panel-body" }, [
-              _c("form", { attrs: { id: "post" }, on: { submit: _vm.post } }, [
-                _c(
-                  "label",
-                  { staticClass: "label-control", attrs: { for: "Amount" } },
-                  [
-                    _vm._v(
-                      "\n                        Amount\n                    "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("input", {
-                  staticClass: "form-control",
-                  attrs: {
-                    type: "number",
-                    placeholder: "Enter the amount",
-                    name: "amount"
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  staticClass: "btn btn-primary",
-                  attrs: { type: "submit", value: "submit" }
-                })
-              ])
+              _c(
+                "form",
+                { attrs: { method: "POST", action: "/WithdrawAmount" } },
+                [
+                  _c("input", {
+                    attrs: { type: "hidden" },
+                    domProps: { value: _vm.csrf }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "label",
+                    { staticClass: "label-control", attrs: { for: "Amount" } },
+                    [
+                      _vm._v(
+                        "\n                        Amount\n                    "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "number",
+                      placeholder: "Enter the amount",
+                      name: "amount"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    staticClass: "btn btn-primary",
+                    attrs: { type: "submit", value: "submit" }
+                  })
+                ]
+              )
             ])
           ])
         ])

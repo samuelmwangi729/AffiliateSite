@@ -35,3 +35,4 @@ Route::get('/newUser','NewUserController@index');
 Route::get('/Upgrade','UpgradeController@index');
 Route::get('/AccountStatus/{id}','UserController@getAccountStatus');
 Route::get('/gen','randomGenController@index');
+Route::post('/WithdrawAmount','WithdrawRequestController@index');
