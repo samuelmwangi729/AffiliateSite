@@ -6,8 +6,9 @@
                    Here is  Your Refferal Code
                 </div>
                 <div class="panel-body">
-                    <form @submit="post" class="form-horizontal" id="form-data">
-                        <input type="text" class="form-control text-center" v-bind:value="details.url+'/'+details.referral" style="border:none;border-bottom:1px solid red"/>
+                    <form class="form-horizontal"  method="GET" action="/postLink">
+                         <input type="hidden" :value='csrf'>
+                        <input type="text" class="form-control text-center"  v-bind:value="details.url+'/'+details.referral"/>
                         <br><button class="btn btn-primary btn-block" type="submit">Use this As your Affiliate Link</button>
                     </form>
                 </div>
@@ -41,19 +42,6 @@
             }).catch(error =>{
                 console.log("Error", error)
             });
-        },
-        methods:{
-            post:function(e){
-                $.ajax({
-                    type:'POST',
-                    url: '/postLink',
-                    data:$('#form-data').serialize(),
-                    success:function(response){
-                        console.log(response);
-                    }
-                });
-                e.preventDefault();
-            }
         }
     }
 </script>
