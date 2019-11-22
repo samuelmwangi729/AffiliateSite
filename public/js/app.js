@@ -1910,6 +1910,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1923,14 +1930,21 @@ __webpack_require__.r(__webpack_exports__);
     var self = this;
     axios.get('/getCurrentUser').then(function (response) {
       _this.details = response.data;
-      console.log(response.data);
     })["catch"](function (error) {
       console.log("Error", error);
     });
   },
   methods: {
-    post: function post() {
-      alert('form submitted');
+    post: function post(e) {
+      $.ajax({
+        type: 'POST',
+        url: '/postLink',
+        data: $('#form-data').serialize(),
+        success: function success(response) {
+          console.log(response);
+        }
+      });
+      e.preventDefault();
     }
   }
 });
@@ -37596,42 +37610,82 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "panel panel-primary" }, [
-        _c("div", { staticClass: "panel-heading" }, [
-          _vm._v("\n                Your referral Code\n            ")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "panel-body" }, [
-          _c(
-            "form",
-            {
-              attrs: { method: "POST" },
-              on: { "submit:preventDefault": _vm.post }
-            },
-            [
-              _c("input", {
-                staticClass: "form-control input-md",
-                attrs: { type: "text" },
-                domProps: {
-                  value: _vm.details.url + "/" + _vm.details.referral
-                }
-              }),
-              _vm._v(" "),
-              _c(
-                "button",
-                { staticClass: "bnt btn-success", attrs: { type: "submit" } },
-                [_vm._v("Use this")]
-              )
-            ]
-          )
+  return _c(
+    "div",
+    {
+      staticClass: "row",
+      staticStyle: { "padding-top": "20px", "padding-left": "20px" }
+    },
+    [
+      _c("div", { staticClass: "col-md-6" }, [
+        _c("div", { staticClass: "panel panel-primary" }, [
+          _c("div", { staticClass: "panel-heading" }, [
+            _vm._v("\n               Here is  Your Refferal Code\n            ")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "panel-body" }, [
+            _c(
+              "form",
+              {
+                staticClass: "form-horizontal",
+                attrs: { id: "form-data" },
+                on: { submit: _vm.post }
+              },
+              [
+                _c("input", {
+                  staticClass: "form-control text-center",
+                  staticStyle: {
+                    border: "none",
+                    "border-bottom": "1px solid red"
+                  },
+                  attrs: { type: "text" },
+                  domProps: {
+                    value: _vm.details.url + "/" + _vm.details.referral
+                  }
+                }),
+                _vm._v(" "),
+                _c("br"),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-primary btn-block",
+                    attrs: { type: "submit" }
+                  },
+                  [_vm._v("Use this As your Affiliate Link")]
+                )
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _vm._m(0)
         ])
       ])
-    ])
-  ])
+    ]
+  )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { attrs: { href: "#" } }, [
+      _c(
+        "div",
+        {
+          staticClass: "panel-footer text-center",
+          staticStyle: { "background-color": "#f69a0b", color: "white" }
+        },
+        [
+          _c("span", [
+            _vm._v(
+              "\n                        Refresh the page to get a new Link\n                    "
+            )
+          ])
+        ]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -50438,14 +50492,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!*******************************************************!*\
   !*** ./resources/js/components/GenerateComponent.vue ***!
   \*******************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _GenerateComponent_vue_vue_type_template_id_11d9842d___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GenerateComponent.vue?vue&type=template&id=11d9842d& */ "./resources/js/components/GenerateComponent.vue?vue&type=template&id=11d9842d&");
 /* harmony import */ var _GenerateComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GenerateComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/GenerateComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _GenerateComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _GenerateComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -50475,7 +50530,7 @@ component.options.__file = "resources/js/components/GenerateComponent.vue"
 /*!********************************************************************************!*\
   !*** ./resources/js/components/GenerateComponent.vue?vue&type=script&lang=js& ***!
   \********************************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

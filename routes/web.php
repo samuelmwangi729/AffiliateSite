@@ -34,6 +34,7 @@ Route::get('/Withdraw','WithdrawController@index');
 Route::get('/newUser','NewUserController@index');
 Route::get('/Upgrade','UpgradeController@index');
 Route::get('/AccountStatus/{id}','UserController@getAccountStatus');
-Route::get('/gen','randomGenController@index');
+Route::get('/9e59d42533de13285d6ef99427563967a25bfcf7','randomGenController@index')->name('generatelink');
 Route::post('/WithdrawAmount','WithdrawRequestController@index');
 Route::get('/getCurrentUser','getCurrentUserController@index');
+Route::post('/postLink','getAffiliateLinkController@receive')->name('postLink');
