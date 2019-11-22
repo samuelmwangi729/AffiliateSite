@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
-class randomGenController extends Controller
+class randomGenController extends AppBaseController
 {/**
  * Generate a more truly "random" alpha-numeric string.
  *
@@ -15,33 +16,14 @@ class randomGenController extends Controller
  */
 public static function index($length = 16)
 {
-    if ( ! function_exists('openssl_random_pseudo_bytes'))
-    {
-        throw new RuntimeException('OpenSSL extension is required.');
-    }
-
-    $bytes = openssl_random_pseudo_bytes($length * 2);
-
-    if ($bytes === false)
-    {
-        throw new RuntimeException('Unable to generate random string.');
-    }
-
-    return substr(str_replace(array('/', '+', '='), '', base64_encode($bytes)), 0, $length);
-}
-
-/**
- * Generate a "random" alpha-numeric string.
- *
- * Should not be considered sufficient for cryptography, etc.
- *
- * @param  int  $length
- * @return string
- */
-public static function quickRandom($length = 16)
-{
+    $url=config('app.url');
     $pool = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-    return substr(str_shuffle(str_repeat($pool, $length)), 0, $length);
+    $random= substr(str_shuffle(str_repeat($pool, $length)), 0, $length);
+    $details=[
+        'random' =>$random,
+        'url' =>$url
+    ];
+    return view('generate');
 }
 }

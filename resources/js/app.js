@@ -24,6 +24,7 @@ Vue.component('withdraw-component', require('./components/WithdrawComponent.vue'
 Vue.component('add-component', require('./components/NewUserComponent.vue').default);
 Vue.component('upgrade-component', require('./components/UpgradeComponent.vue').default);
 Vue.component('account-component', require('./components/AccountComponent.vue').default);
+Vue.component('generate-component', require('./components/GenerateComponent.vue').default);
 // Vue.component('account-component',require('../components/AccountStatusComponent.vue'));
 /**
  * Next, we will create a fresh Vue application instance and attach it to
