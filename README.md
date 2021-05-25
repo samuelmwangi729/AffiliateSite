@@ -1,2 +1,1 @@
-# AffiliateSite
-#just an incomplete affiliate site
+AffiliateSitejust an incomplete affiliate site
